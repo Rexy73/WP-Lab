@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <script>
+        function validateForm() {
+            let name = document.forms["myForm"]["name"].value.trim();
+            let email = document.forms["myForm"]["email"].value.trim();
+            let mobile = document.forms["myForm"]["mobile"].value.trim();
+
+            if (name === "" || email === "" || mobile === "") {
+                alert("Please fill out all required fields (Name, Email, Mobile Number).");
+                return false;
+            }
+
+            // Validate Email
+            let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            // Validate Mobile Number (only digits, 10 characters)
+            let mobilePattern = /^[6-9]\d{9}$/;
+            if (!mobilePattern.test(mobile)) {
+                alert("Mobile number must be exactly 10 digits or Start Number with 6 to 9");
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
+    <style>
+        body {
+            background-image: url("karin.gif");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        div {
+            margin: 20px;
+            border: 20px;
+        }
+
+        form {
+            width: 500px;
+            height: 500px;
+            border: 2px solid black;
+            text-align: left;
+            background-color: #FFE5B4;
+        }
+
+        #ke{margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h2>Registration Form</h2>
+        <div>
+            <form name="myForm" onsubmit="return validateForm()">
+                <div>
+                    <label for="name">Name:</label>
+                </div>
+                <div id="ke">
+                <input type="text" id="name" name="name">
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                </div>
+                <div id="ke">
+                <input type="text" id="email" name="email">
+                </div>
+                <div>
+                    <label for="mobile">Mobile Number:</label>
+                </div>
+                <div id="ke">
+                <input type="text" id="mobile" name="mobile">
+                </div>
+                <div>
+                    <label>Gender:</label>
+                </div>
+                <div>
+                    <input type="radio" name="gender" value="Male"> Male<br>
+                    <input type="radio" name="gender" value="Female"> Female
+                </div>
+                <div>
+                    <label>Hobbies:</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="hobby1" value="Reading"> Reading
+                    <input type="checkbox" name="hobby2" value="Music"> Music
+                    <input type="checkbox" name="hobby3" value="Sports"> Sports
+                </div>
+                <div>
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </center>
+</body>
+</html>

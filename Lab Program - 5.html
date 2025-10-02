@@ -1,0 +1,24 @@
+<html>
+<head>
+	<title>Basic Animation of Ball</title>
+	<style>
+		#layer1{position:absolute;top:50px;left:50 px;}
+		#layer2{position:absolute;top:50px;left:150 px;}
+		#layer3{position:absolute;top:50px;left:250 px;}
+	</style>
+	<script type="text/javascript">
+	function moveBall(layer)
+	{
+		var top=window.prompt("Enter the top value");
+		var left=window.prompt("Enter the left value");
+		document.getElementById(layer).style.top=top+'px';
+		document.getElementById(layer).style.left=left+'px';		
+	}
+	</script>
+</head>
+	<body>
+		<div id="layer1"><img src="Okarun Balls.png" onclick="moveBall('layer1')" alt="ball"/></div>
+		<div id="layer2"><img src="Okarun Balls.png" onclick="moveBall('layer2')" alt="ball"/></div>
+		<div id="layer3"><img src="Okarun Balls.png" onclick="moveBall('layer3')" alt="ball"/></div>
+	</body>
+</html>

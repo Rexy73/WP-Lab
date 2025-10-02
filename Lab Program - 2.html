@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Expression Evaluator</title>
+    <script>
+        function EvaluateExpression() {
+            const expression = document.getElementById("MathExpr").value;
+            let result;
+
+            try {
+                result = eval(expression);
+                document.getElementById("result").innerHTML = "Result: " + result;
+            } catch (error) {
+                document.getElementById("result").innerHTML = "Invalid Expression!";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Mathematical Expression Evaluator</h2>
+    <form onsubmit="event.preventDefault(); EvaluateExpression();">
+        <label for="MathExpr">Enter Expression: </label>
+        <input type="text" id="MathExpr" name="MathExpr" placeholder="e.g. 3+4*(2-1)" required>
+        <input type="submit" value="Evaluate">
+    </form>
+
+    <p id="result"></p>
+</body>
+</html>
