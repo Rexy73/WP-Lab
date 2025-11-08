@@ -33,6 +33,10 @@
             $error .= "<p style='color:red;'>Age must be a number.</p>";
         }
 
+        if (!empty($name)&&!preg_match("/^[a-zA-z\s]+$/",$name)){
+            $error.="<p Style='color:red;'>Name must contain only alphabets";
+        }
+
         if ($error == "") {
             echo "<p style='color:green;'>All inputs are valid.</p>";
             echo "<h3>Entered Details:</h3>";
