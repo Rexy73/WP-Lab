@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #003366;
+    padding: 14px;
+    text-align: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 18px;
+    display: inline-block;
+}
+
+.navbar a:hover {
+    background-color: #005963;
+}
+
+footer {
+    background-color: #003366;
+    color: white;
+    padding: 12px;
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: calc(100% - 130px);
+    background-color: #f5f4ff;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+.home-background {
+    background-image:url('college.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: calc(100% - 130px);
+    color: black;
+}
