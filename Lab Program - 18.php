@@ -1,0 +1,15 @@
+<?php
+// Step 1: Set a cookie named "user" with a value "Kusuma"
+$cookie_name = "user";
+$cookie_value = "Reyen";
+
+// The cookie will expire in 1 hour (3600 seconds)
+setcookie($cookie_name, $cookie_value, time() + 3600, "/");
+
+// Step 2: Check if the cookie is already set
+if(isset($_COOKIE[$cookie_name])) {
+    echo "Welcome back, " . $_COOKIE[$cookie_name] . "!";
+} else {
+    echo "Welcome, new visitor! Refresh the page to see the change.";
+}
+?>
